@@ -1,0 +1,23 @@
+div(class='modal fade', id='newSnap', tabindex='-1', role='dialog')
+    div(class='modal-dialog', role='document')
+      div(class='modal-content')
+        div(class='modal-header')
+          button(type='button', class='close', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+          h4(class='modal-title') New Snap
+        div(class='modal-body')
+          form(id='newSnapForm')
+            div(class='form-group')
+              label(for='placeInput') Place
+              input(type='text', class='form-control', id='placeInput', placeholder='Ex: Griffith Park Viewpoint', v-model='newSnap.place')
+
+            div(class='form-group')
+              label(for='descInput') Description
+              input(type='text', class='form-control', id='descInput', placeholder='Ex: Nice viewpoint over looking Los Angeles', v-model='newSnap.description')
+
+            label Click on the map to mark the location of your snap
+            div(id='newSnapMap')
+
+        div(class='modal-footer')
+          button(type='button', class='btn btn-default', data-dismiss='modal') Close
+          button(type='button', class='btn btn-primary', v-on:click='postData') Post

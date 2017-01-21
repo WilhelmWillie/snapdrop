@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  include includes/navbar.pug
+
+  div(id='app')
+    div(id='discoverMap')
+    div(Class='container')
+      div(id='snaps')
+        snap-item(v-for='item in snaps' v-bind:snap='item')
+
+    include includes/newSnapModal.pug

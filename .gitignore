@@ -1,1 +1,9 @@
-env
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+config/db.js
+
+.DS_Store

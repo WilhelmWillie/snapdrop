@@ -1,0 +1,12 @@
+#newSnapMap {
+  height: 350px;
+  width: 100%;
+}
+
+#discoverMap {
+  width: 100%;
+  height: 100%;
+  top: 50px;
+  left: 0;
+  position: fixed !important;
+}
