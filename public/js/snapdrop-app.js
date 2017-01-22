@@ -1,4 +1,4 @@
-var apiURL = 'http://localhost:3000/api/snaps';
+var apiURL = '/api/snaps';
 
 /* Vue for AJAX and templating */
 
