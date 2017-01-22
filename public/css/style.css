@@ -1,4 +1,8 @@
 /* Bootstrap Overrides */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .navbar-form .input-group {
   width: 500px !important;
 }
@@ -80,4 +84,8 @@ a.navbar-brand img {
 
 .logo:hover {
   -webkit-transform: rotate(180deg);
+}
+
+.tags .label {
+  margin-right: 10px;
 }

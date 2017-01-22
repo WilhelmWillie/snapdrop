@@ -9,7 +9,8 @@ var SnapSchema = new mongoose.Schema({
     coordinates: [Number]
   },
   file: String,
-  tags: [String]
+  tags: [String],
+  comments: [String]
 });
 
 SnapSchema.index({loc: '2dsphere'});

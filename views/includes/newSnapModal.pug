@@ -17,7 +17,11 @@ div(class='modal fade', id='newSnap', tabindex='-1', role='dialog')
 
             div(class='form-group')
               label(for='descInput') Description
-              textarea(type='text', class='form-control', id='descInput', placeholder='Ex: Nice viewpoint over looking Los Angeles', v-model='newSnap.description')
+              textarea(type='text', class='form-control', id='descInput', placeholder='Ex: Nice viewpoint over looking Los Angeles, taken with a Nikon D60 with f/11, ISO 200, shutter 1/16', v-model='newSnap.description')
+
+            div(class='form-group')
+              label(for='tagsInput') Tags (Separate by whitespace)
+              input(type='text', class='form-control', id='tagsInput', placeholder='landscape la nature sun', v-model='newSnap.tags')
 
             div(class='form-group')
               label(for='imgInput') Image

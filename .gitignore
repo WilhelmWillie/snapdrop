@@ -7,3 +7,5 @@ node_modules
 config/db.js
 
 .DS_Store
+
+public/images/uploads

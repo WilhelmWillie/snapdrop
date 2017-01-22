@@ -23,6 +23,11 @@ Vue.component('current-snap', {
                   <div class="col-md-4">\
                     <p class="photographer"><b>By:</b> {{snap.photographer}}</p>\
                     <p>{{snap.description}}</p>\
+                    <hr>\
+                    <div class="tags">\
+                      <span class="label label-default" v-for="tag in snap.tags">{{tag}}</span>\
+                    </div>\
+                    <hr>\
                     </div>\
                   </div>\
                 </div>\
@@ -41,7 +46,8 @@ var app =  new Vue({
       long: null,
       lat: null
     },
-    currentSnap: null
+    currentSnap: null,
+    newComment: null
   },
 
   created: function() {
@@ -97,6 +103,7 @@ var app =  new Vue({
       formData.append('place', this.newSnap.place);
       formData.append('photographer', this.newSnap.photographer);
       formData.append('description', this.newSnap.description);
+      formData.append('tags', this.newSnap.tags);
       formData.append('lat', this.newSnap.lat);
       formData.append('long', this.newSnap.long);
       formData.append('file', file);
@@ -159,6 +166,10 @@ var app =  new Vue({
     setSnap: function(snap) {
       this.currentSnap = snap;
       window.location.hash = snap._id;
+    },
+
+    comment: function() {
+      alert(this.newComment);
     }
   }
 });

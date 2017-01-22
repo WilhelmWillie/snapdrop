@@ -18,10 +18,14 @@ router.get('/snaps', function(req, res, next) {
 
 // POST a snap
 router.post('/snaps', upload.single('file'), function(req, res, next) {
+  // Break up tags
+  tags = req.body.tags.split(/[ ,]+/);
+
   Snap.create({
     place: req.body.place,
     description: req.body.description,
     photographer: req.body.photographer,
+    tags: tags,
     loc: {
       type: "Point",
       coordinates: [req.body.long, req.body.lat]
@@ -99,5 +103,23 @@ router.post('/snap/:id/like', function(req, res, next) {
     res.json({ message: "You already liked this"});
   }
 });
+
+// FOR THE FUTURE
+// POST to comment on a snap
+router.post('/snap/:id/comment', function(req, res, next) {
+  Snap.findByIdAndUpdate(
+    req.params.id,
+    {$push: {"comments": req.body.comment}},
+    {safe: true, upsert: true},
+    function(err, model) {
+      if (err) {
+        res.render('error', { error: err });
+        return;
+      } else {
+        res.json(snap);
+      }
+    }
+  );
+})
 
 module.exports = router;
