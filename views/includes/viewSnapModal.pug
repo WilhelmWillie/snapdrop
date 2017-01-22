@@ -1,0 +1,12 @@
+div(class='modal fade', id='viewSnap', tabindex='-1', role='dialog', v-if="currentSnap != null")
+    div(class='modal-dialog modal-lg', role='document')
+      div(class='modal-content')
+        div(class='modal-header')
+          button(type='button', class='close', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+          h4(class='modal-title') {{currentSnap.place}}
+        div(class='modal-body')
+          current-snap(v-bind:snap='currentSnap', v-if="currentSnap != null")
+
+        div(class='modal-footer')
+          button(type='button', class='btn btn-default', data-dismiss='modal') Close

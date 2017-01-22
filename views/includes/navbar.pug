@@ -6,12 +6,14 @@ nav(class='navbar navbar-default navbar-static-top')
         span(class='icon-bar')
         span(class='icon-bar')
         span(class='icon-bar')
-      a(class='navbar-brand', href='/') SnapDrop
+      a(class='navbar-brand', href='/')
+        img(src='/images/logo.svg', height='40', class='logo')
+        | SnapDrop
     div(id='navbar', class='navbar-collapse collapse')
       form(class='navbar-form navbar-left' role='search')
         div(class='input-group')
-          input(type='text', class='form-control', placeholder='Search')
-          span(class='input-group-btn')
+          input(type='text', class='form-control', placeholder='Search', id='mapSearch')
+          // span(class='input-group-btn')
             button(class='btn btn-default', type='button') Go!
 
       div(class='navbar-right')

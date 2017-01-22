@@ -6,17 +6,26 @@ div(class='modal fade', id='newSnap', tabindex='-1', role='dialog')
             span(aria-hidden='true') &times;
           h4(class='modal-title') New Snap
         div(class='modal-body')
-          form(id='newSnapForm')
+          form(id='newSnapForm',enctype='multipart/form-data')
             div(class='form-group')
               label(for='placeInput') Place
               input(type='text', class='form-control', id='placeInput', placeholder='Ex: Griffith Park Viewpoint', v-model='newSnap.place')
 
             div(class='form-group')
-              label(for='descInput') Description
-              input(type='text', class='form-control', id='descInput', placeholder='Ex: Nice viewpoint over looking Los Angeles', v-model='newSnap.description')
+              label(for='photographerInput') Photographer
+              input(type='text', class='form-control', id='photographerInput', placeholder='Ex: @freewillie_ (IG)', v-model='newSnap.photographer')
 
-            label Click on the map to mark the location of your snap
-            div(id='newSnapMap')
+            div(class='form-group')
+              label(for='descInput') Description
+              textarea(type='text', class='form-control', id='descInput', placeholder='Ex: Nice viewpoint over looking Los Angeles', v-model='newSnap.description')
+
+            div(class='form-group')
+              label(for='imgInput') Image
+              input(type='file', name='upl',id='imgInput')
+
+            div(class='form-group')
+              label Click on the map to mark the location of your snap
+              div(id='newSnapMap')
 
         div(class='modal-footer')
           button(type='button', class='btn btn-default', data-dismiss='modal') Close
