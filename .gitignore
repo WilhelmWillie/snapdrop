@@ -9,3 +9,4 @@ config/db.js
 .DS_Store
 
 public/images/uploads
+.ebextensions
